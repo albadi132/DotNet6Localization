@@ -13,7 +13,6 @@ var localizationOptions = new RequestLocalizationOptions();
 var supportedCultures = new[]
 {
     new CultureInfo("ar"),
-    new CultureInfo("ss"),
     new CultureInfo("en")
 
 };

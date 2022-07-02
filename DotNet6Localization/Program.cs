@@ -12,8 +12,10 @@ var localizationOptions = new RequestLocalizationOptions();
 
 var supportedCultures = new[]
 {
-    new CultureInfo("en"),
-    new CultureInfo("ar")
+    new CultureInfo("ar"),
+    new CultureInfo("ss"),
+    new CultureInfo("en")
+
 };
 
 localizationOptions.SupportedCultures = supportedCultures;
@@ -22,12 +24,18 @@ localizationOptions.SetDefaultCulture("en");
 // support localization with header for API
 localizationOptions.ApplyCurrentCultureToResponseHeaders = true;
 
+
+builder.Services
+.AddControllersWithViews()
+.AddViewLocalization();
+
 /* End Localization */
 
 var app = builder.Build();
 
 // For Localization
 app.UseRequestLocalization(localizationOptions);
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
